@@ -1,0 +1,61 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb"
+  ],
+  "plugins": [
+    "codeceptjs"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "codeceptjs/codeceptjs": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "config/webpack.dev.js"
+      }
+    }
+  },
+  "globals": {
+    "REACT_APP_API_URL": true,
+    "__REDUX_DEVTOOLS_EXTENSION_COMPOSE__": true,
+    "__REDUX_DEVTOOLS_EXTENSION__": true
+  },
+  "rules": {
+    "newline-before-return": "error",
+    "no-prototype-builtins": 0,
+    "semi": ["error", "always"],
+    "comma-dangle": [2, "always-multiline"],
+    "indent": [
+      "error", 4, {"SwitchCase": 1}
+    ],
+    "max-len": 0,
+    "no-shadow": 0,
+    "arrow-body-style": 0,
+    "global-require": 0,
+    "no-unused-expressions": 0,
+    "no-confusing-arrow": 0,
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "react/require-default-props": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
+    "react/jsx-indent-props": ["error", 4],
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+  }
+}

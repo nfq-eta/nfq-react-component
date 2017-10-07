@@ -1,0 +1,62 @@
+package-lock.json merge=ours
+yarn.lock merge=ours
+
+# These settings are for project
+
+# source code
+*.css text
+*.scss text
+*.js text
+*.json text
+*.html text
+*.svg text
+*.txt text
+*.ini text
+*.sh text
+*.bat text
+
+# git config
+.gitattributes text
+.gitignore text
+
+# code analysis config
+.jshintrc text
+.jscsrc text
+.jshintignore text
+
+# misc config
+*.yaml text
+*.yml text
+.editorconfig text
+
+# build config
+*.npmignore text
+
+# Documentation
+*.md text
+
+## These files are binary and should be left untouched
+
+# (binary is a macro for -text -diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.fla binary
+*.swf binary
+*.gz binary
+*.zip binary
+*.7z binary
+*.ttf binary
+*.eot binary
+*.woff binary
+*.pyc binary
+*.pdf binary
+*.snap binary
+*-lock.json binary
+yarn.lock binary

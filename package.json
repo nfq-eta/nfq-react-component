@@ -1,7 +1,7 @@
 {
-  "name": "react-loading-button",
+  "name": "nfq-react-component",
   "version": "1.0.0",
-  "description": "react-loading-button React component",
+  "description": "nfq-react-component React component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -11,21 +11,41 @@
     "umd"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "npm run lint && npm run test:e2e && nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
+    "lint": "eslint *.js src tests",
+    "lint:fix": "npm run lint -- --fix",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "pretest:e2e": "xnohup npm start",
+    "test:e2e": "sleep 3 && codeceptjs run --steps",
+    "posttest:e2e": "tree-kill `lsof -i:3000 | grep node | awk '{ print $2 }' | xargs | cut -d ' ' -f2`",
+    "gpublish": "nwb build-demo && gh-pages -d demo/dist"
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "15.x"
+    "react": "15.x || 16.x"
   },
   "devDependencies": {
+    "babel-eslint": "8.0.1",
+    "codeceptjs": "1.0.3",
+    "concurrently": "3.5.0",
+    "eslint": "4.8.0",
+    "eslint-config-airbnb": "16.0.0",
+    "eslint-plugin-codeceptjs": "0.2.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-react": "7.4.0",
+    "gh-pages": "1.0.0",
+    "nightmare": "2.10.0",
+    "nightmare-upload": "0.1.1",
+    "nohup": "0.1.0",
     "nwb": "0.19.x",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "tree-kill": "1.2.0"
   },
   "author": "",
   "homepage": "",
@@ -33,5 +53,9 @@
   "repository": "",
   "keywords": [
     "react-component"
-  ]
+  ],
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  }
 }

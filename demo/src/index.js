@@ -1,15 +1,14 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React from 'react';
+import { render } from 'react-dom';
 
-import Example from '../../src'
+import Example from '../../src';
+import { name, version } from '../../package';
 
-class Demo extends Component {
-  render() {
-    return <div>
-      <h1>react-loading-button Demo</h1>
-      <Example/>
+const Demo = () => (
+    <div>
+        <h1>{name} v{version} Demo</h1>
+        <Example />
     </div>
-  }
-}
+);
 
-render(<Demo/>, document.querySelector('#demo'))
+render(<Demo />, document.querySelector('#demo'));

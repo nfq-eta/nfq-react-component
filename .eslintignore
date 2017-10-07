@@ -1,0 +1,9 @@
+*.html
+*.css
+*.scss
+*.json
+*.snap
+*.png
+*.jpg
+*.svg
+registerServiceWorker.js
