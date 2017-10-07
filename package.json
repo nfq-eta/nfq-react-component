@@ -50,10 +50,13 @@
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
   "keywords": [
     "react-component"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nfq-eta/nfq-react-component.git"
+  },
   "engines": {
     "node": ">=8",
     "npm": ">=5"
