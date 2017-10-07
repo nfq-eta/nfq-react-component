@@ -15,17 +15,17 @@ after_success:
 
 deploy:
   - provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN
-    local_dir: demo/dist
-    on:
-      branch: master
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      local_dir: demo/dist
+      on:
+        branch: master
   - provider: npm
-    email: projektas@gmail.com
-    on:
-      tags: true
-    api_key:
-      secure: rtFrbyAVNmo4jJbfytb2xegx/ROTEwBFO+/BWASAD7N/bCZekGVWzlUGe4ijA/93QSOTLUKRsY0ztZPK5kjM4qcWBC57vKAqOsFhKay2z5fVtwpVNNHuQBCaBvwG1NkKv6slt27iBOl4uFfOKvmTGuVM8Z1CrY65Ks9VJuvBjck+sMEFrLWk6Zjc8s2boIFLtkYXSth4OFq8Kr2ti5Fom5eLrKu+r5HXHd/XD87utdSCQuVImcRs+CV1ADaEQtoazjkb6NKFpmGSac5P3ekG5nU/blCaXLxgLKlAUbL6xib2VFhg/2wpApRQVPQRrGg63Sa5PQwu6S3mGh/ixkhg526XOLfUKNDYQiJ96HX+nUIFh7oY1aZO3W7X7p4BvyLLDIpjwU1AVM0ljz1jKUDXuMJ3Pb2TiKEAku6F8ZwfE4fVg0jYlrd/Q9/KV4valUQV/A2RK7Qb+lvihCKsVhsJkllwG0ckIPjxmoTegD5WYCs/ITVt/xfYahPgXQu/EVQQCVeOX26Dr8T6JS3xfVcm36BmjunMEKoDmPeuQ0iOSFe5sit9h54+6INW543Lf7bu4Yg5GCbTkuERwsALEJDq3TWpDN/mFShJR/dRF05HrMxvbwDHIEyj9dydj9NBdXdtT5PWzrMB5d6vYfCVmaFQV8eLkIsywNi77SdtmCdl8lE=
+      email: $NPM_EMAIL
+      on:
+        tags: true
+      api_key:
+        secure: $NPM_AUTH_TOKEN
 
 branches:
   only:
