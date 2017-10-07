@@ -15,18 +15,15 @@ after_success:
 
 deploy:
   - provider: pages
-      skip_cleanup: true
-      github_token: $GITHUB_TOKEN
-      local_dir: demo/dist
-      on:
-        branch: master
-  - provider: npm
-      email: $NPM_EMAIL
-      on:
-        tags: true
-      api_key:
-        secure: $NPM_AUTH_TOKEN
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: demo/dist
+    on:
+      branch: master
 
-branches:
-  only:
-    - master
+  - provider: npm
+    email: $NPM_EMAIL
+    on:
+      tags: true
+    api_key:
+      secure: $NPM_AUTH_TOKEN
