@@ -3,7 +3,7 @@ import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { name, version } from '../package';
 
-import Component from '../src/index';
+import { Component } from '../src/index';
 
 describe('Component', () => {
     let node;
@@ -18,7 +18,7 @@ describe('Component', () => {
 
     it('displays a welcome message', () => {
         render(<Component />, node, () => {
-            expect(node.innerHTML).toContain(`Welcome to ${name} ${version} component`);
+            expect(node.innerHTML).toContain(`Welcome to ${name} v${version} component`);
         });
     });
 });

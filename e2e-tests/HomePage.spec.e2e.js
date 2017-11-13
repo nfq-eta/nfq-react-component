@@ -4,5 +4,5 @@ Feature('Homepage');
 
 Scenario('test something', (I) => {
     I.amOnPage('/');
-    I.see(`${name} v${version} Demo`);
+    I.see(`Welcome to ${name} v${version} component`);
 });

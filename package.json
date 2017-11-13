@@ -11,25 +11,31 @@
     "umd"
   ],
   "scripts": {
-    "build": "npm run lint && npm run test:e2e && nwb build-react-component",
+    "build": "npm run clean && npm run lint && npm run test && npm run test:e2e && nwb build-react-component; npm run killserver",
     "postbuild": "cat ./src/index.js | react2dts --module-name nfq-react-component > lib/index.d.ts",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "start": "nwb serve-react-demo",
+    "clean": "nwb clean-module",
+    "start": "npm run storybook",
     "lint": "eslint *.js src tests",
     "lint:fix": "npm run lint -- --fix",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
     "pretest:e2e": "xnohup npm start",
-    "test:e2e": "sleep 3 && codeceptjs run --steps",
-    "posttest:e2e": "tree-kill `lsof -i:3000 | grep node | awk '{ print $2 }' | xargs | cut -d ' ' -f2`",
-    "gpublish": "nwb build-demo && gh-pages -d demo/dist"
+    "test:e2e": "sleep 10 && codeceptjs run --steps",
+    "killserver": "tree-kill `lsof -i:3000 | grep node | awk '{ print $2 }' | xargs | cut -d ' ' -f2`",
+    "gpublish": "npm run build-storybook && gh-pages -d storybook-static",
+    "storybook": "start-storybook -p 3000",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {},
   "peerDependencies": {
     "react": "15.x || 16.x"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/addon-info": "3.2.15",
+    "@storybook/addon-links": "^3.2.15",
+    "@storybook/react": "^3.2.15",
     "babel-eslint": "8.0.1",
     "codeceptjs": "1.0.3",
     "concurrently": "3.5.0",
