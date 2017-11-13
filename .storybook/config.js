@@ -1,6 +1,19 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { setDefaults, withInfo } from '@storybook/addon-info';
+import { setOptions } from '@storybook/addon-options';
+
+setOptions({
+    name: require('../package.json').name,
+    url: require('../package.json').homepage,
+    goFullScreen: false,
+    showLeftPanel: true,
+    showDownPanel: true,
+    showSearchBox: false,
+    downPanelInRight: false,
+    hierarchySeparator: /\//,
+});
+
 
 setDefaults({
     header: false, // Toggles display of header with component name and description

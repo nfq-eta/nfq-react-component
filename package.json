@@ -35,6 +35,7 @@
     "@storybook/addon-actions": "^3.2.15",
     "@storybook/addon-info": "3.2.15",
     "@storybook/addon-links": "^3.2.15",
+    "@storybook/addon-options": "3.2.15",
     "@storybook/react": "^3.2.15",
     "babel-eslint": "8.0.1",
     "codeceptjs": "1.0.3",
@@ -55,8 +56,8 @@
     "react-to-typescript-definitions": "0.22.0",
     "tree-kill": "1.2.0"
   },
-  "author": "",
-  "homepage": "",
+  "author": "eta",
+  "homepage": "https://github.com/nfq-eta/nfq-react-component",
   "license": "MIT",
   "keywords": [
     "react-component"
