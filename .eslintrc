@@ -56,6 +56,7 @@
     "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}],
     "react/jsx-indent-props": ["error", 4],
     "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "no-else-return": 2
   }
 }
