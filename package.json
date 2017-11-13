@@ -11,7 +11,7 @@
     "umd"
   ],
   "scripts": {
-    "build": "npm run clean && npm run lint && npm run test && npm run test:e2e && nwb build-react-component; npm run killserver",
+    "build": "npm run clean && npm run lint && npm run test && npm run test:e2e && nwb build-react-component && npm run build-storybook ; npm run killserver",
     "postbuild": "cat ./src/index.js | react2dts --module-name nfq-react-component > lib/index.d.ts",
     "clean": "nwb clean-module",
     "start": "npm run storybook",
