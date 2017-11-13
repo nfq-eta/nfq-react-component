@@ -1,5 +1,8 @@
+/* eslint-disable prefer-destructuring */
 import React from 'react';
-import { name, version } from '../package';
+
+const name = require('../package.json').name;
+const version = require('../package.json').version;
 
 export default () => (
     <div>
