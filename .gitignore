@@ -8,3 +8,4 @@ npm-debug.log*
 /es
 /lib
 /umd
+/storybook-static/

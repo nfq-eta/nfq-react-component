@@ -11,15 +11,15 @@ after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - npm run build
-  - nwb build-demo
 
 deploy:
   - provider: pages
     name: Github Pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
-    local_dir: demo/dist
+    local_dir: storybook-static
     on:
+      tags: true
       branch: master
   - provider: npm
     name: NPM
@@ -28,3 +28,4 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
+      branch: master

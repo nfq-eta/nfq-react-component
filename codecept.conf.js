@@ -4,7 +4,7 @@ exports.config = {
     output: './e2e-tests/logs',
     helpers: {
         Nightmare: {
-            url: 'http://localhost:3000',
+            url: 'http://localhost:3000/iframe.html?',
             windowSize: '1920x1200',
         },
     },

@@ -4,8 +4,8 @@ import React from 'react';
 const name = require('../package.json').name;
 const version = require('../package.json').version;
 
-export default () => (
+export const Component = () => (
     <div>
-        <h2>Welcome to {name} {version} component</h2>
+        <h2>Welcome to {name} v{version} component</h2>
     </div>
 );
