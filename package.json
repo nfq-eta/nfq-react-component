@@ -21,7 +21,7 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
     "pretest:e2e": "xnohup npm start",
-    "test:e2e": "sleep 10 && codeceptjs run --steps",
+    "test:e2e": "sleep 3 && codeceptjs run --steps",
     "killserver": "tree-kill `lsof -i:3000 | grep node | awk '{ print $2 }' | xargs | cut -d ' ' -f2`",
     "gpublish": "npm run build-storybook && gh-pages -d storybook-static",
     "storybook": "start-storybook -p 3000",
